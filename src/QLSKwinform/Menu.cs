@@ -31,7 +31,7 @@ namespace QLSKwinform
         private void label10_Click(object sender, EventArgs e)
         {
             this.Hide();
-            roomF rmF = new roomF();
+            roomF rmF = new roomF(em);
             rmF.ShowDialog();
             this.Close();
         }
@@ -177,6 +177,14 @@ namespace QLSKwinform
             this.Hide();
             formLogin frlogin = new formLogin();
             frlogin.ShowDialog();
+            this.Close();
+        }
+
+        private void btnEvented_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EventForm eve = new EventForm(em);
+            eve.ShowDialog();
             this.Close();
         }
     }
