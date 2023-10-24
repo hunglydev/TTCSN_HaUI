@@ -15,7 +15,7 @@ namespace QLSKwinform
     public partial class formLogin : Form
     {
         //tạo 2 biến cục bộ
-        string strCon = @"Data Source=TRANMINHHIEU\SQLEXPRESS;Initial Catalog=DATABASEQLSK;Integrated Security=True";
+        string strCon = @"Data Source=TRANMINHHIEU\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
         //đối tượng kết nối 
         SqlConnection sqlcon = null;
 
@@ -30,8 +30,7 @@ namespace QLSKwinform
             if(sqlcon == null)
             {
                 sqlcon = new SqlConnection(strCon);
-            }
-            if(sqlcon.State == ConnectionState.Closed)
+            }            if(sqlcon.State == ConnectionState.Closed)
             {
                 sqlcon.Open();
             }
@@ -64,7 +63,7 @@ namespace QLSKwinform
                 string em = (string)sqlCmd.ExecuteScalar();
                 //MessageBox.Show(em);
                 this.Hide();
-                MessageBox.Show("Đăng nhập thành công!");
+                //MessageBox.Show("Đăng nhập thành công!");
                 Menu mn = new Menu(em);
                 mn.ShowDialog();
                 this.Close();
@@ -86,11 +85,6 @@ namespace QLSKwinform
                 MessageBox.Show("Mật khẩu sai hoặc tài khoản không tồn tại! Vui lòng nhập lại!");
                 txtMatKhau.Text = null;
             }
-            
-           
-           
-            
-
 
         }
 

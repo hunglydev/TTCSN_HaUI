@@ -208,6 +208,7 @@
             this.btnEvented.TabIndex = 19;
             this.btnEvented.Text = "Các sự kiện đã đặt";
             this.btnEvented.UseVisualStyleBackColor = true;
+            this.btnEvented.Click += new System.EventHandler(this.btnEvented_Click);
             // 
             // btnLogout
             // 

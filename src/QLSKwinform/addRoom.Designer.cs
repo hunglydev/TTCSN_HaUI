@@ -49,12 +49,15 @@
             this.btnClosetab = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbVoucher = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(160, 86);
+            this.label1.Location = new System.Drawing.Point(158, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 0;
@@ -63,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 122);
+            this.label2.Location = new System.Drawing.Point(158, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 16);
             this.label2.TabIndex = 1;
@@ -72,7 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(160, 163);
+            this.label3.Location = new System.Drawing.Point(158, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 16);
             this.label3.TabIndex = 2;
@@ -81,7 +84,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(160, 205);
+            this.label5.Location = new System.Drawing.Point(158, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 16);
             this.label5.TabIndex = 4;
@@ -91,16 +94,17 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(160, 245);
+            this.label6.Location = new System.Drawing.Point(158, 176);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Tên phòng";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(160, 284);
+            this.label7.Location = new System.Drawing.Point(158, 204);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 16);
             this.label7.TabIndex = 6;
@@ -109,7 +113,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(160, 326);
+            this.label8.Location = new System.Drawing.Point(158, 232);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(130, 16);
             this.label8.TabIndex = 7;
@@ -118,7 +122,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(160, 370);
+            this.label9.Location = new System.Drawing.Point(158, 260);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 16);
             this.label9.TabIndex = 8;
@@ -126,35 +130,35 @@
             // 
             // txtEventName
             // 
-            this.txtEventName.Location = new System.Drawing.Point(316, 80);
+            this.txtEventName.Location = new System.Drawing.Point(314, 58);
             this.txtEventName.Name = "txtEventName";
-            this.txtEventName.Size = new System.Drawing.Size(301, 22);
+            this.txtEventName.Size = new System.Drawing.Size(302, 22);
             this.txtEventName.TabIndex = 9;
             // 
             // txtEventHost
             // 
-            this.txtEventHost.Location = new System.Drawing.Point(316, 119);
+            this.txtEventHost.Location = new System.Drawing.Point(314, 86);
             this.txtEventHost.Name = "txtEventHost";
-            this.txtEventHost.Size = new System.Drawing.Size(301, 22);
+            this.txtEventHost.Size = new System.Drawing.Size(302, 22);
             this.txtEventHost.TabIndex = 10;
             // 
             // txtTele
             // 
-            this.txtTele.Location = new System.Drawing.Point(316, 160);
+            this.txtTele.Location = new System.Drawing.Point(314, 114);
             this.txtTele.Name = "txtTele";
             this.txtTele.Size = new System.Drawing.Size(301, 22);
             this.txtTele.TabIndex = 11;
             // 
             // txtPlace
             // 
-            this.txtPlace.Location = new System.Drawing.Point(316, 205);
+            this.txtPlace.Location = new System.Drawing.Point(314, 142);
             this.txtPlace.Name = "txtPlace";
-            this.txtPlace.Size = new System.Drawing.Size(301, 22);
+            this.txtPlace.Size = new System.Drawing.Size(302, 22);
             this.txtPlace.TabIndex = 13;
             // 
             // txtRoomName
             // 
-            this.txtRoomName.Location = new System.Drawing.Point(315, 245);
+            this.txtRoomName.Location = new System.Drawing.Point(314, 170);
             this.txtRoomName.Name = "txtRoomName";
             this.txtRoomName.Size = new System.Drawing.Size(302, 22);
             this.txtRoomName.TabIndex = 14;
@@ -162,30 +166,31 @@
             // 
             // txtAmout
             // 
-            this.txtAmout.Location = new System.Drawing.Point(316, 284);
+            this.txtAmout.Location = new System.Drawing.Point(314, 198);
             this.txtAmout.Name = "txtAmout";
             this.txtAmout.Size = new System.Drawing.Size(301, 22);
             this.txtAmout.TabIndex = 15;
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(316, 364);
+            this.txtNote.Location = new System.Drawing.Point(314, 254);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(301, 22);
             this.txtNote.TabIndex = 16;
             // 
             // txtPay
             // 
-            this.txtPay.Location = new System.Drawing.Point(316, 326);
+            this.txtPay.Location = new System.Drawing.Point(314, 226);
             this.txtPay.Name = "txtPay";
             this.txtPay.Size = new System.Drawing.Size(301, 22);
             this.txtPay.TabIndex = 17;
+            this.txtPay.TextChanged += new System.EventHandler(this.txtPay_TextChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(325, 9);
+            this.label10.Location = new System.Drawing.Point(328, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(158, 29);
             this.label10.TabIndex = 18;
@@ -194,7 +199,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(257, 453);
+            this.btnAdd.Location = new System.Drawing.Point(270, 390);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(127, 48);
             this.btnAdd.TabIndex = 19;
@@ -205,7 +210,7 @@
             // btnClosetab
             // 
             this.btnClosetab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClosetab.Location = new System.Drawing.Point(476, 453);
+            this.btnClosetab.Location = new System.Drawing.Point(489, 390);
             this.btnClosetab.Name = "btnClosetab";
             this.btnClosetab.Size = new System.Drawing.Size(127, 48);
             this.btnClosetab.TabIndex = 20;
@@ -216,7 +221,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(160, 419);
+            this.label4.Location = new System.Drawing.Point(158, 288);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 21;
@@ -224,10 +229,38 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(302, 411);
+            this.txtEmail.Location = new System.Drawing.Point(314, 282);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(300, 22);
+            this.txtEmail.Size = new System.Drawing.Size(301, 22);
             this.txtEmail.TabIndex = 22;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(158, 316);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 16);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Voucher";
+            // 
+            // cbVoucher
+            // 
+            this.cbVoucher.FormattingEnabled = true;
+            this.cbVoucher.Location = new System.Drawing.Point(314, 316);
+            this.cbVoucher.Name = "cbVoucher";
+            this.cbVoucher.Size = new System.Drawing.Size(301, 24);
+            this.cbVoucher.TabIndex = 24;
+            this.cbVoucher.SelectedIndexChanged += new System.EventHandler(this.cbVoucher_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(621, 316);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 24);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Voucher của tôi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // addRoom
             // 
@@ -235,7 +268,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QLSKwinform.Properties.Resources.kenny_krosky_2xjk8WWLFC4_unsplash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 525);
+            this.ClientSize = new System.Drawing.Size(797, 492);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cbVoucher);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnClosetab);
@@ -258,7 +294,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "addRoom";
-            this.Text = "addRoom";
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,5 +323,8 @@
         private System.Windows.Forms.Button btnClosetab;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cbVoucher;
+        private System.Windows.Forms.Button button1;
     }
 }
