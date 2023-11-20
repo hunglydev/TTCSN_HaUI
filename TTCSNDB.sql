@@ -16,7 +16,6 @@ CREATE TABLE TAIKHOAN(
 	maSuKien nvarchar (20) not null primary key,
 	maPhong nvarchar (20) not null FOREIGN KEY REFERENCES dbo.PHONG(maPhong),
 	tenSuKien nvarchar(20) not null,
-	diaDiem nvarchar(20) not null,
 	soLuongDuKien int not null,
 	tinhTrangThanhToan int not null,
 	ghiChu nvarchar(50),
@@ -28,6 +27,7 @@ CREATE TABLE TAIKHOAN(
 	CREATE TABLE PHONG(
 	maPhong nvarchar (20) not null primary key,
 	tenPhong nvarchar(20) not null,
+	diaDiem nvarchar(20) not null,
 	sucChuaToiDa int not null,
 	moTaChiTiet nvarchar(225) not null,
 	moTaVanTat nvarchar(100) not null,
@@ -62,17 +62,17 @@ CREATE TABLE TAIKHOAN(
 	SELECT * FROM TAIKHOAN
 	INSERT INTO SUKIEN
 	VALUES 
-		('user123' , 'H01', 'P01', N'Đám cưới Hoàng và Hà', N'158 Cầu Giấy', 600,0, '', 0, '2023-10-20'),
-		('user124' , 'H02', 'P02', N'Sinh nhật Thùy Linh', N'162 Tôn Đức Thắng', 300,0, '', 0, '2023-12-03')
+		('user123' , 'H01', 'P01', N'Đám cưới Hoàng và Hà', 600,0, '', 0, '2023-10-20'),
+		('user124' , 'H02', 'P02', N'Sinh nhật Thùy Linh', 300,0, '', 0, '2023-12-03')
 	SELECT * FROM SUKIEN
 	INSERT INTO PHONG
 	VALUES 
-		('P01', N'Phòng A', '600',N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện'),
-		('P02', N'Phòng B', '700', N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện'),
-		('P03', N'Phòng C', '800',N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện'),
-		('P04', N'Phòng D', '700', N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện'),
-		('P05', N'Phòng E', '800', N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện'),
-		('P06', N'Phòng F', '900', N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện')
+		('P01', N'Phòng A', N'158 Cầu Giấy', '600',N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện'),
+		('P02', N'Phòng B', N'181 Hồ Tùng Mậu', '700', N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện'),
+		('P03', N'Phòng C', N'203 Đống Đa', '800',N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện'),
+		('P04', N'Phòng D', N'120 Nguyễn Trãi', '700', N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện'),
+		('P05', N'Phòng E', N'270 Cổ Nhuế', '800', N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện'),
+		('P06', N'Phòng F', N'203 Phan Đình Phùng', '900', N'Phòng có đầy đủ điều hòa, quạt, sân khấu, có hệ thống chiếu sáng, âm thanh thích hợp cho nhóm đông người', N'Phòng có đầy đủ đồ phục vụ các sự kiện')
 	SELECT * FROM PHONG
 	INSERT INTO VOUCHER
 	VALUES 
