@@ -37,3 +37,4 @@ D:\Documents\TTCSN\TTCSN_HaUI\src\QLSKwinform\obj\Debug\QLSKwinform.csproj.CoreC
 D:\Documents\TTCSN\TTCSN_HaUI\src\QLSKwinform\obj\Debug\QLSKwinform.exe
 D:\Documents\TTCSN\TTCSN_HaUI\src\QLSKwinform\obj\Debug\QLSKwinform.pdb
 D:\Documents\TTCSN\TTCSN_HaUI\src\QLSKwinform\obj\Debug\QLSKwinform.EventForm.resources
+D:\Documents\TTCSN\TTCSN_HaUI\src\QLSKwinform\obj\Debug\QLSKwinform.InforEvent.resources

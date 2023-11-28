@@ -86,8 +86,14 @@ namespace QLSKwinform
             
             else  if (tenTaiKhoan != "" && matKhau != "" && rematKhau != "" && matKhau == rematKhau && eMail !="" && tendaydu != "" && sodt != "")
             {
-                sqlCmd.CommandText = "INSERT INTO TAIKHOAN VALUES('" + generatedID + "','" + tenTaiKhoan + "','" + matKhau + "','"+tendaydu+"','"+eMail+"','"+sodt+"')";
-
+                //sqlCmd.CommandText = "INSERT INTO TAIKHOAN VALUES('" + generatedID + "','" + tenTaiKhoan + "','" + matKhau + "','"+tendaydu+"','"+eMail+"','"+sodt+"')";
+                sqlCmd.CommandText = "INSERT INTO TAIKHOAN VALUES ('@maTK','@tenTK', '@mK',N'@hoten', '@email', '@sdt')";
+                sqlCmd.Parameters.AddWithValue("@maTK", generatedID.ToString());
+                sqlCmd.Parameters.AddWithValue("@tenTaiKhoan", txtLogisName.Text);
+                sqlCmd.Parameters.AddWithValue("@matKhau", txtLogisPass.Text);
+                sqlCmd.Parameters.AddWithValue("@hoten", txtFullName.Text);
+                sqlCmd.Parameters.AddWithValue("@email", txtLogisEmail.Text);
+                sqlCmd.Parameters.AddWithValue("@sdt", txtSdt.Text);
                 //gửi truy vấn vào kết nối
                 sqlCmd.Connection = sqlcon;
                 sqlCmd.ExecuteNonQuery();

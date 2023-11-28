@@ -71,6 +71,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="InforEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InforEvent.Designer.cs">
+      <DependentUpon>InforEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,44 +89,47 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Phong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="roomA.cs">
+    <Compile Include="rooms\roomA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="roomA.Designer.cs">
+    <Compile Include="rooms\roomA.Designer.cs">
       <DependentUpon>roomA.cs</DependentUpon>
     </Compile>
-    <Compile Include="roomB.cs">
+    <Compile Include="rooms\roomB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="roomB.Designer.cs">
+    <Compile Include="rooms\roomB.Designer.cs">
       <DependentUpon>roomB.cs</DependentUpon>
     </Compile>
-    <Compile Include="roomC.cs">
+    <Compile Include="rooms\roomC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="roomC.Designer.cs">
+    <Compile Include="rooms\roomC.Designer.cs">
       <DependentUpon>roomC.cs</DependentUpon>
     </Compile>
-    <Compile Include="roomD.cs">
+    <Compile Include="rooms\roomD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="roomD.Designer.cs">
+    <Compile Include="rooms\roomD.Designer.cs">
       <DependentUpon>roomD.cs</DependentUpon>
     </Compile>
-    <Compile Include="roomE.cs">
+    <Compile Include="rooms\roomE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="roomE.Designer.cs">
+    <Compile Include="rooms\roomE.Designer.cs">
       <DependentUpon>roomE.cs</DependentUpon>
     </Compile>
-    <Compile Include="roomF.cs">
+    <Compile Include="rooms\roomF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="roomF.Designer.cs">
+    <Compile Include="rooms\roomF.Designer.cs">
       <DependentUpon>roomF.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuKien.cs" />
+    <Compile Include="SuKienPhongCombined.cs" />
     <EmbeddedResource Include="addRoom.resx">
       <DependentUpon>addRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InforEvent.resx">
+      <DependentUpon>InforEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logister.resx">
       <DependentUpon>Logister.cs</DependentUpon>
@@ -146,22 +158,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="roomA.resx">
+    <EmbeddedResource Include="rooms\roomA.resx">
       <DependentUpon>roomA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="roomB.resx">
+    <EmbeddedResource Include="rooms\roomB.resx">
       <DependentUpon>roomB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="roomC.resx">
+    <EmbeddedResource Include="rooms\roomC.resx">
       <DependentUpon>roomC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="roomD.resx">
+    <EmbeddedResource Include="rooms\roomD.resx">
       <DependentUpon>roomD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="roomE.resx">
+    <EmbeddedResource Include="rooms\roomE.resx">
       <DependentUpon>roomE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="roomF.resx">
+    <EmbeddedResource Include="rooms\roomF.resx">
       <DependentUpon>roomF.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -207,5 +219,6 @@
   <ItemGroup>
     <None Include="Resources\kenny-krosky-2xjk8WWLFC4-unsplash.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

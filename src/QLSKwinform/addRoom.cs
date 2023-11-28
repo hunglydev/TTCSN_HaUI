@@ -25,24 +25,28 @@ namespace QLSKwinform
         public string RMNAME {
             get; set;
         }
-
         private string em;
         public string EM { get; set; }
+        private string roomid;
+        public string ROOMID { get; set; }
         private string value;
-       
+        private string rmID;
 
         public addRoom()
         {
             InitializeComponent();
+            txtEventHost.ReadOnly = true;
+            txtTele.ReadOnly = true;
+            txtRoomName.ReadOnly = true;
+            txtEmail.ReadOnly = true;
         }
 
-        public void SetDataFormRoom(string rmName, string em)
+        public void SetDataFormRoom(string rmName, string em, string roomid)
         {
             txtRoomName.Text = rmName;
             txtEmail.Text = em;
             value = em;
-            txtPay.Text = 0.ToString();
-
+            rmID = roomid;
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -52,6 +56,7 @@ namespace QLSKwinform
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+           
             if (sqlcon == null)
             {
                 sqlcon = new SqlConnection(strCon);
@@ -59,40 +64,127 @@ namespace QLSKwinform
             if (sqlcon.State == ConnectionState.Closed) { sqlcon.Open(); }
 
             string tenSK = txtEventName.Text;
-            string dd = txtPlace.Text;
+            
             string sl = txtAmout.Text;
-            string tt = txtPay.Text;
             string note = txtNote.Text;
             int trangThai = 0 ;
-            string tg = "2023 - 12 - 05";
-            Random random = new Random();
-            int id;
-            do
-            {
-                id = random.Next(1, 10000);
-            } while (randomNumbers.Contains(id));
-            
-            
-
             SqlCommand sqlCmd = new SqlCommand();
             sqlCmd.CommandType = CommandType.Text;
+            List<string> existingAccountIDs = new List<string>();
+            sqlCmd.CommandText = "SELECT maSuKien FROM SUKIEN";
+            sqlCmd.Connection = sqlcon;
+            SqlDataReader reader = sqlCmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string existingID = reader.GetString(0);
+                existingAccountIDs.Add(existingID);
+            }
+            reader.Close();
+            Random random = new Random();
+            string generatedID;
+            do
+            {
+                int id = random.Next(1, 10000);
+                generatedID = "event" + id.ToString();
+            } while (existingAccountIDs.Contains(generatedID));
+
+            //SqlCommand sqlCmd = new SqlCommand();
+            //sqlCmd.CommandType = CommandType.Text;
             sqlCmd.CommandText = "SELECT maTaiKhoan FROM TAIKHOAN where email ='" + value + "'";
             sqlCmd.Connection = sqlcon;
             string maTk = (string)sqlCmd.ExecuteScalar();
-            if(tenSK != "" && dd != "" && sl != "" && tt != "")
-            {
-                sqlCmd.CommandText = "INSERT  into SUKIEN VALUES('" + maTk + "','" + "event" + id + "','" + tenSK + "','" + dd + "','" + sl + "','" + tt + "','" + note + "', " + trangThai + "  ,'" + tg + "')";
-                sqlCmd.Connection = sqlcon;
-                sqlCmd.ExecuteNonQuery();
-                sqlcon.Close();
-                MessageBox.Show("Đã đăng kí phòng! Vui lòng chờ xác nhận!");
+   
+            //MessageBox.Show(voucher);
 
+            if(cbVoucher.SelectedItem != null)
+            {
+                if (dtpThoiGían.Value <= DateTime.Now)
+                {
+                    MessageBox.Show("Thời gian phải sau ngày hiện tại");
+                }
+                else
+                {
+                    if (tenSK != "" && sl != "")
+                    {
+                        if (IsRoomBooked(sqlcon, rmID, dtpThoiGían.Value))
+                        {
+                            MessageBox.Show("Phòng đã kín tại thời điểm này. Vui lòng chọn thời điểm khác hoặc chọn phòng khác!");
+                            return;
+                        }
+                        else
+                        {
+                            string voucher = cbVoucher.SelectedItem.ToString();
+                            sqlCmd.CommandText = "begin transaction; INSERT  into SUKIEN VALUES('" + maTk + "','" + generatedID + "','" + rmID + "',N'" + tenSK + "','" + sl + "','" + 0 + "','" + note + "', " + trangThai + "  ,'" + dtpThoiGían.Value + "'); " +
+                                "Delete From TAIKHOAN_VOUCHER WHERE maVoucher = '" + voucher + "' and maTaiKhoan =(SELECT maTaiKhoan FROM TAIKHOAN where email ='" + value + "') ; commit ";
+
+                            // sqlCmd.CommandText = "";
+                            sqlCmd.Connection = sqlcon;
+                            sqlCmd.ExecuteNonQuery();
+                            sqlcon.Close();
+                            MessageBox.Show("Đã đăng kí phòng! Vui lòng chờ xác nhận!");
+                            this.Hide();
+                            Menu mn = new Menu(value);
+                            mn.ShowDialog();
+                            this.Close();
+                        }
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                    }
+                }
+                
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                if(dtpThoiGían.Value <= DateTime.Now)
+                {
+                    MessageBox.Show("Thời gian phải sau ngày hiện tại");
+                }
+                else
+                {
+                    if (tenSK != "" && sl != "" )
+                    {
+                        if (IsRoomBooked(sqlcon, rmID, dtpThoiGían.Value))
+                        {
+                            MessageBox.Show("Phòng đã kín tại thời điểm này. Vui lòng chọn thời điểm khác hoặc chọn phòng khác!");
+                            return;
+                        }
+                        else
+                        {
+                            sqlCmd.CommandText = " INSERT into SUKIEN VALUES('" + maTk + "','" + generatedID + "','" + rmID + "',N'" + tenSK + "','" + sl + "','" + 0 + "','" + note + "', " + trangThai + "  ,'" + dtpThoiGían.Value + "'); ";
+                            // sqlCmd.CommandText = "";
+                            sqlCmd.Connection = sqlcon;
+                            sqlCmd.ExecuteNonQuery();
+                            sqlcon.Close();
+                            MessageBox.Show("Đã đăng kí phòng! Vui lòng chờ xác nhận!");
+                            this.Hide();
+                            Menu mn = new Menu(value);
+                            mn.ShowDialog();
+                            this.Close();
+                        }
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                    }
+                }
+                
             }
+           
+        }
 
+        private bool IsRoomBooked(SqlConnection connection, string roomId, DateTime eventTime)
+        {
+            using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM SUKIEN WHERE MaPhong = @RoomId AND TrangThai = 1 AND ThoiGian = @EventTime", connection))
+            {
+                command.Parameters.AddWithValue("@RoomId", roomId);
+                command.Parameters.AddWithValue("@EventTime", eventTime);
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
         }
 
         private void txtRoomName_TextChanged(object sender, EventArgs e)
@@ -101,8 +193,7 @@ namespace QLSKwinform
         }
 
         private void btnClosetab_Click(object sender, EventArgs e)
-        {
-            
+        {   
             this.Hide();
             Menu mn = new Menu(value);  
             mn.ShowDialog();
@@ -122,11 +213,6 @@ namespace QLSKwinform
         private void button1_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(value);
-            
-                
-            
-            
-            
         }
 
         private void txtPay_TextChanged(object sender, EventArgs e)
@@ -141,7 +227,6 @@ namespace QLSKwinform
                 string query = "SELECT maVoucher FROM TAIKHOAN_VOUCHER WHERE maTaiKhoan = (SELECT maTaiKhoan FROM TAIKHOAN WHERE email = @Email)";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlcon);
                 sqlCmd.Parameters.AddWithValue("@Email", value);
-
                 sqlcon.Open();
                 SqlDataReader reader = sqlCmd.ExecuteReader();
 
@@ -152,10 +237,12 @@ namespace QLSKwinform
                     string maVoucher = reader.GetString(0);
                     cbVoucher.Items.Add(maVoucher); // Thêm mỗi voucher vào ComboBox
                 }
-
+                ;
                 reader.Close();
             }
-            using(SqlConnection sqlcon = new SqlConnection(strCon))
+
+
+            using (SqlConnection sqlcon = new SqlConnection(strCon))
             {
                 string query1 = "SELECT tenNguoiChuTri FROM TAIKHOAN where email ='" + value + "'";
                 SqlCommand sqlCmd1 = new SqlCommand(query1, sqlcon);
@@ -165,7 +252,7 @@ namespace QLSKwinform
                 txtEventHost.Text = (string)sqlCmd1.ExecuteScalar();
                 txtTele.Text = (string)sqlCmd2.ExecuteScalar();
             }
-            
+
         }
     }
     
