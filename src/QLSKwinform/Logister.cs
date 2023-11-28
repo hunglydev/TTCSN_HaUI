@@ -74,7 +74,8 @@ namespace QLSKwinform
             
             else  if (tenTaiKhoan != "" && matKhau != "" && rematKhau != "" && matKhau == rematKhau && eMail !="")
             {
-                sqlCmd.CommandText = "INSERT INTO TAIKHOAN (maTaiKhoan, tenTaiKhoan, matKhau, email ) VALUES('" + "user"+id.ToString() + "','" + tenTaiKhoan + "','" + matKhau + "','"+eMail+"')";
+                sqlCmd.CommandText = "INSERT INTO TAIKHOAN (maTaiKhoan, tenTaiKhoan, matKhau, email ) VALUES('" + "user"+id.ToString() 
+                    + "','" + tenTaiKhoan + "','" + matKhau + "','"+eMail+"')";
 
                 //gửi truy vấn vào kết nối
                 sqlCmd.Connection = sqlcon;

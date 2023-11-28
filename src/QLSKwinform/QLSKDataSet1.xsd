@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QLSKDataSet1" targetNamespace="http://tempuri.org/QLSKDataSet1.xsd" xmlns:mstns="http://tempuri.org/QLSKDataSet1.xsd" xmlns="http://tempuri.org/QLSKDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLSKConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLSKConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QLSKwinform.Properties.Settings.GlobalReference.Default.QLSKConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TAIKHOAN_VOUCHERTableAdapter" GeneratorDataComponentClassName="TAIKHOAN_VOUCHERTableAdapter" Name="TAIKHOAN_VOUCHER" UserDataComponentName="TAIKHOAN_VOUCHERTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLSKConnectionString (Settings)" DbObjectName="QLSK.dbo.TAIKHOAN_VOUCHER" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT maVoucher FROM dbo.TAIKHOAN_VOUCHER</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="maVoucher" DataSetColumn="maVoucher" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QLSKDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="QLSKDataSet1" msprop:Generator_DataSetName="QLSKDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TAIKHOAN_VOUCHER" msprop:Generator_RowEvHandlerName="TAIKHOAN_VOUCHERRowChangeEventHandler" msprop:Generator_RowDeletedName="TAIKHOAN_VOUCHERRowDeleted" msprop:Generator_RowDeletingName="TAIKHOAN_VOUCHERRowDeleting" msprop:Generator_RowEvArgName="TAIKHOAN_VOUCHERRowChangeEvent" msprop:Generator_TablePropName="TAIKHOAN_VOUCHER" msprop:Generator_RowChangedName="TAIKHOAN_VOUCHERRowChanged" msprop:Generator_RowChangingName="TAIKHOAN_VOUCHERRowChanging" msprop:Generator_TableClassName="TAIKHOAN_VOUCHERDataTable" msprop:Generator_RowClassName="TAIKHOAN_VOUCHERRow" msprop:Generator_TableVarName="tableTAIKHOAN_VOUCHER" msprop:Generator_UserTableName="TAIKHOAN_VOUCHER">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="maVoucher" msprop:Generator_ColumnPropNameInRow="maVoucher" msprop:Generator_ColumnPropNameInTable="maVoucherColumn" msprop:Generator_ColumnVarNameInTable="columnmaVoucher" msprop:Generator_UserColumnName="maVoucher">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

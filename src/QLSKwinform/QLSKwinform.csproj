@@ -53,12 +53,100 @@
     <Compile Include="addRoom.Designer.cs">
       <DependentUpon>addRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="adminMenu.cs">
+    <Compile Include="Admin\adminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="adminMenu.Designer.cs">
+    <Compile Include="Admin\adminMenu.Designer.cs">
       <DependentUpon>adminMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Phong\BaoTriPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Phong\BaoTriPhong.Designer.cs">
+      <DependentUpon>BaoTriPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Phong\ChiTietPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Phong\ChiTietPhong.Designer.cs">
+      <DependentUpon>ChiTietPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Phong\Phong.cs" />
+    <Compile Include="Admin\Phong\ThemPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Phong\ThemPhong.Designer.cs">
+      <DependentUpon>ThemPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuKien\BaoTriSuKien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\SuKien\BaoTriSuKien.Designer.cs">
+      <DependentUpon>BaoTriSuKien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuKien\ChiTietSuKien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\SuKien\ChiTietSuKien.Designer.cs">
+      <DependentUpon>ChiTietSuKien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuKien\SuKien.cs" />
+    <Compile Include="Admin\SuKien\SuKienChuaDuyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\SuKien\SuKienChuaDuyet.Designer.cs">
+      <DependentUpon>SuKienChuaDuyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TaiKhoan\BaoTriTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TaiKhoan\BaoTriTaiKhoan.Designer.cs">
+      <DependentUpon>BaoTriTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TaiKhoan\ChiTietTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TaiKhoan\ChiTietTaiKhoan.Designer.cs">
+      <DependentUpon>ChiTietTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TaiKhoan\ThemTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TaiKhoan\ThemTaiKhoan.Designer.cs">
+      <DependentUpon>ThemTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TaiKhoan_Voucher\BaoTriTKVC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TaiKhoan_Voucher\BaoTriTKVC.Designer.cs">
+      <DependentUpon>BaoTriTKVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TaiKhoan_Voucher\ThemTKVC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TaiKhoan_Voucher\ThemTKVC.Designer.cs">
+      <DependentUpon>ThemTKVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TaiKhoan_Voucher\TKVC.cs" />
+    <Compile Include="Admin\Voucher\BaoTriVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Voucher\BaoTriVoucher.Designer.cs">
+      <DependentUpon>BaoTriVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Voucher\ChiTietVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Voucher\ChiTietVoucher.Designer.cs">
+      <DependentUpon>ChiTietVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Voucher\ThemVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Voucher\ThemVoucher.Designer.cs">
+      <DependentUpon>ThemVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Voucher\Voucher.cs" />
     <Compile Include="EventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +173,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLSKDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSKDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLSKDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSKDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLSKDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSKDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLSKDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSKDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="roomA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,8 +229,54 @@
     <Compile Include="roomF.Designer.cs">
       <DependentUpon>roomF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\TaiKhoan\TaiKhoan.cs" />
     <EmbeddedResource Include="addRoom.resx">
       <DependentUpon>addRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\adminMenu.resx">
+      <DependentUpon>adminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Phong\BaoTriPhong.resx">
+      <DependentUpon>BaoTriPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Phong\ChiTietPhong.resx">
+      <DependentUpon>ChiTietPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Phong\ThemPhong.resx">
+      <DependentUpon>ThemPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\SuKien\BaoTriSuKien.resx">
+      <DependentUpon>BaoTriSuKien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\SuKien\ChiTietSuKien.resx">
+      <DependentUpon>ChiTietSuKien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\SuKien\SuKienChuaDuyet.resx">
+      <DependentUpon>SuKienChuaDuyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TaiKhoan\BaoTriTaiKhoan.resx">
+      <DependentUpon>BaoTriTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TaiKhoan\ChiTietTaiKhoan.resx">
+      <DependentUpon>ChiTietTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TaiKhoan\ThemTaiKhoan.resx">
+      <DependentUpon>ThemTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TaiKhoan_Voucher\BaoTriTKVC.resx">
+      <DependentUpon>BaoTriTKVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TaiKhoan_Voucher\ThemTKVC.resx">
+      <DependentUpon>ThemTKVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Voucher\BaoTriVoucher.resx">
+      <DependentUpon>BaoTriVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Voucher\ChiTietVoucher.resx">
+      <DependentUpon>ChiTietVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Voucher\ThemVoucher.resx">
+      <DependentUpon>ThemVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EventForm.resx">
       <DependentUpon>EventForm.cs</DependentUpon>
@@ -178,6 +332,50 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLSKDataSet.xsc">
+      <DependentUpon>QLSKDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLSKDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLSKDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLSKDataSet.xss">
+      <DependentUpon>QLSKDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLSKDataSet1.xsc">
+      <DependentUpon>QLSKDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLSKDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLSKDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLSKDataSet1.xss">
+      <DependentUpon>QLSKDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLSKDataSet2.xsc">
+      <DependentUpon>QLSKDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLSKDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLSKDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLSKDataSet2.xss">
+      <DependentUpon>QLSKDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLSKDataSet3.xsc">
+      <DependentUpon>QLSKDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QLSKDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLSKDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLSKDataSet3.xss">
+      <DependentUpon>QLSKDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="Resources\dia-diem-khach-san-to-chuc-su-kien-intercontinental-Hanoi-Landmark72.jpg" />
   </ItemGroup>
   <ItemGroup>

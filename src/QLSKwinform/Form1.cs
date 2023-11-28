@@ -15,7 +15,7 @@ namespace QLSKwinform
     public partial class formLogin : Form
     {
         //tạo 2 biến cục bộ
-        string strCon = @"Data Source=TRANMINHHIEU\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
+        string strCon = @"Data Source=DESKTOP-983J608\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
         //đối tượng kết nối 
         SqlConnection sqlcon = null;
 
@@ -52,7 +52,7 @@ namespace QLSKwinform
 
             //câu lệnh truy vấn vào tài khoản admin
 
-            sqlCmd.CommandText = "SELECT tenTaiKhoan from TAIKHOAN WHERE tenTaiKhoan='admin1'";
+            sqlCmd.CommandText = "SELECT tenTaiKhoan from TAIKHOAN WHERE tenTaiKhoan='admin2'";
             sqlCmd.Connection = sqlcon;
             string result = (string) sqlCmd.ExecuteScalar();
 
@@ -68,7 +68,7 @@ namespace QLSKwinform
                 mn.ShowDialog();
                 this.Close();
             }
-            if(result == tenTaiKhoan && password == matKhau)
+            if (result == tenTaiKhoan && password == matKhau)
             {
                 this.Hide();
                 MessageBox.Show("Đăng nhập thành công!");
