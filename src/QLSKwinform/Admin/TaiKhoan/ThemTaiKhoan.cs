@@ -14,7 +14,9 @@ namespace QLSKwinform.Admin.TaiKhoan
     public partial class ThemTaiKhoan : Form
     {
         // Tạo biến kết nối và danh sách các số nguyên ngẫu nhiên
-        string strCon = @"Data Source=TRANMINHHIEU\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
+        //tạo 2 biến cục bộ
+        string strCon = @"Data Source=DESKTOP-983J608\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
+        //đối tượng kết nối 
         SqlConnection sqlcon = null;
         private List<int> randomNumbers = new List<int>();
 

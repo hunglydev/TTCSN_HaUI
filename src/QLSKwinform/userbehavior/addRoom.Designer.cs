@@ -161,24 +161,26 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(270, 390);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(127, 48);
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClosetab
             // 
+            this.btnClosetab.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnClosetab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClosetab.Location = new System.Drawing.Point(489, 390);
             this.btnClosetab.Name = "btnClosetab";
             this.btnClosetab.Size = new System.Drawing.Size(127, 48);
             this.btnClosetab.TabIndex = 20;
             this.btnClosetab.Text = "Hủy bỏ";
-            this.btnClosetab.UseVisualStyleBackColor = true;
+            this.btnClosetab.UseVisualStyleBackColor = false;
             this.btnClosetab.Click += new System.EventHandler(this.btnClosetab_Click);
             // 
             // label4

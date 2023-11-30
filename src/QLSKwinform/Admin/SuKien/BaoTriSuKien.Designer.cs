@@ -38,7 +38,7 @@
             // dgvBaoTriSuKien
             // 
             this.dgvBaoTriSuKien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBaoTriSuKien.Location = new System.Drawing.Point(90, 154);
+            this.dgvBaoTriSuKien.Location = new System.Drawing.Point(90, 186);
             this.dgvBaoTriSuKien.Name = "dgvBaoTriSuKien";
             this.dgvBaoTriSuKien.RowHeadersWidth = 51;
             this.dgvBaoTriSuKien.RowTemplate.Height = 24;
@@ -49,24 +49,26 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(236, 587);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(273, 54);
             this.button1.TabIndex = 1;
             this.button1.Text = "Trở lại";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(1031, 587);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(273, 54);
             this.button3.TabIndex = 2;
             this.button3.Text = "Các sự kiện chưa duyệt";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
@@ -83,6 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QLSKwinform.Properties.Resources.dia_diem_khach_san_to_chuc_su_kien_intercontinental_Hanoi_Landmark721;
             this.ClientSize = new System.Drawing.Size(1553, 838);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);

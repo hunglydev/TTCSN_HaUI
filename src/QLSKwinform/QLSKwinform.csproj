@@ -415,6 +415,29 @@
   <ItemGroup>
     <None Include="Resources\kenny-krosky-2xjk8WWLFC4-unsplash.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\adminmenu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aaa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backxanh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backxanh2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sukien1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vou.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vou2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

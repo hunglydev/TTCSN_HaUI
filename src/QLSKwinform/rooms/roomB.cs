@@ -57,5 +57,10 @@ namespace QLSKwinform
             add.ShowDialog();
             this.Close();
         }
+
+        private void lbRoomA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

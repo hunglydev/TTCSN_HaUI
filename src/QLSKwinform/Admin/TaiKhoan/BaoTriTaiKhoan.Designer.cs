@@ -49,42 +49,45 @@
             // 
             this.dgvTaiKhoan.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTaiKhoan.Location = new System.Drawing.Point(66, 237);
+            this.dgvTaiKhoan.Location = new System.Drawing.Point(177, 239);
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvTaiKhoan.RowHeadersWidth = 51;
             this.dgvTaiKhoan.RowTemplate.Height = 24;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(1052, 196);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(883, 196);
             this.dgvTaiKhoan.TabIndex = 1;
             this.dgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellClick);
             this.dgvTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnThem
             // 
+            this.btnThem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(737, 577);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(169, 51);
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Thêm tài khoản";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnTroLai
             // 
+            this.btnTroLai.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnTroLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTroLai.Location = new System.Drawing.Point(262, 577);
             this.btnTroLai.Name = "btnTroLai";
             this.btnTroLai.Size = new System.Drawing.Size(169, 51);
             this.btnTroLai.TabIndex = 3;
             this.btnTroLai.Text = "Trở lại";
-            this.btnTroLai.UseVisualStyleBackColor = true;
+            this.btnTroLai.UseVisualStyleBackColor = false;
             this.btnTroLai.Click += new System.EventHandler(this.btnTroLai_Click);
             // 
             // BaoTriTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QLSKwinform.Properties.Resources.kenny_krosky_2xjk8WWLFC4_unsplash;
             this.ClientSize = new System.Drawing.Size(1199, 674);
             this.Controls.Add(this.btnTroLai);
             this.Controls.Add(this.btnThem);

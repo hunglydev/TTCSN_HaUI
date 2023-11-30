@@ -19,7 +19,7 @@ namespace QLSKwinform
         }
 
         //tạo 2 biến cục bộ
-        string strCon = @"Data Source=TRANMINHHIEU\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
+        string strCon = @"Data Source=DESKTOP-983J608\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
         //đối tượng kết nối 
         SqlConnection sqlcon = null;
 
@@ -113,6 +113,11 @@ namespace QLSKwinform
             formLogin login = new formLogin();
             login.ShowDialog();
             this.Close();
+        }
+
+        private void Logister_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

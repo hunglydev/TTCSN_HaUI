@@ -16,7 +16,8 @@ namespace QLSKwinform
     public partial class addRoom : Form
     {
         //tạo 2 biến cục bộ
-        string strCon = @"Data Source=TRANMINHHIEU\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
+        //tạo 2 biến cục bộ
+        string strCon = @"Data Source=DESKTOP-983J608\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
         //đối tượng kết nối 
         SqlConnection sqlcon = null;
         private List<int> randomNumbers = new List<int>();

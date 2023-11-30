@@ -59,5 +59,15 @@ namespace QLSKwinform
         {
 
         }
+
+        private void roomA_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbRoomA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

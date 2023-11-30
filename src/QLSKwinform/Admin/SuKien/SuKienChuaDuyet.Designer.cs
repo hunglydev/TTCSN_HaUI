@@ -37,7 +37,7 @@
             // dgvSuKienChuaDuyet
             // 
             this.dgvSuKienChuaDuyet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSuKienChuaDuyet.Location = new System.Drawing.Point(62, 201);
+            this.dgvSuKienChuaDuyet.Location = new System.Drawing.Point(61, 218);
             this.dgvSuKienChuaDuyet.Name = "dgvSuKienChuaDuyet";
             this.dgvSuKienChuaDuyet.RowHeadersWidth = 51;
             this.dgvSuKienChuaDuyet.RowTemplate.Height = 24;
@@ -50,7 +50,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(540, 89);
+            this.label1.Location = new System.Drawing.Point(582, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(296, 25);
             this.label1.TabIndex = 2;
@@ -58,19 +58,21 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(545, 617);
+            this.button1.Location = new System.Drawing.Point(663, 632);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(273, 54);
+            this.button1.Size = new System.Drawing.Size(197, 54);
             this.button1.TabIndex = 3;
             this.button1.Text = "Trở lại";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SuKienChuaDuyet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QLSKwinform.Properties.Resources.kenny_krosky_2xjk8WWLFC4_unsplash;
             this.ClientSize = new System.Drawing.Size(1471, 735);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);

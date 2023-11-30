@@ -46,24 +46,26 @@
             // 
             // btnXoa
             // 
+            this.btnXoa.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(519, 509);
+            this.btnXoa.Location = new System.Drawing.Point(440, 509);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(108, 49);
             this.btnXoa.TabIndex = 16;
             this.btnXoa.Text = "Trở lại";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
+            this.btnLuu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(219, 509);
+            this.btnLuu.Location = new System.Drawing.Point(202, 509);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(108, 49);
             this.btnLuu.TabIndex = 17;
             this.btnLuu.Text = "Thêm";
-            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label6
@@ -172,7 +174,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(248, 26);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(246, 31);
+            this.label7.Size = new System.Drawing.Size(197, 25);
             this.label7.TabIndex = 20;
             this.label7.Text = "THÊM TÀI KHOẢN";
             // 
@@ -180,6 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QLSKwinform.Properties.Resources.backxanh;
             this.ClientSize = new System.Drawing.Size(800, 609);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSDT);

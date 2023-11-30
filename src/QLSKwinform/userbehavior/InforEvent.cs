@@ -13,7 +13,8 @@ namespace QLSKwinform
 {
     public partial class InforEvent : Form
     {
-        string strCon = @"Data Source=TRANMINHHIEU\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
+        //tạo 2 biến cục bộ
+        string strCon = @"Data Source=DESKTOP-983J608\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
         //đối tượng kết nối 
         SqlConnection sqlcon = null;
         private string em;
@@ -37,50 +38,54 @@ namespace QLSKwinform
 
         private void btnAgree_Click(object sender, EventArgs e)
         {
-            using (SqlConnection sqlcon = new SqlConnection(strCon))
+            if (dateTimePicker1.Value < DateTime.Now)
             {
-                sqlcon.Open();
-                //Truy van vao bang tai khoan
-                string sqlUpdate = "UPDATE SUKIEN SET tenSuKien = @TenSuKien, thoiGian = @ThoiGian, ghiChu = @GhiChu, soLuongDuKien = @SoLuongDuKien WHERE maSuKien = @MaSuKien";
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa sự kiện này không?", "Xác nhận sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                MessageBox.Show("Vui lòng nhập lại ngày lớn hơn ngày hiện tại");
+            }
+            else
+            {
+                using (SqlConnection sqlcon = new SqlConnection(strCon))
                 {
-
-
-                    using (SqlCommand sqlcmd = new SqlCommand(sqlUpdate, sqlcon))
+                    sqlcon.Open();
+                    //Truy van vao bang tai khoan
+                    string sqlUpdate = "UPDATE SUKIEN SET tenSuKien = @TenSuKien, thoiGian = @ThoiGian, ghiChu = @GhiChu, soLuongDuKien = @SoLuongDuKien WHERE maSuKien = @MaSuKien";
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa sự kiện này không?", "Xác nhận sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
                     {
-                        sqlcmd.Parameters.AddWithValue("@TenSuKien", txtTenSuKien.Text);
-                        sqlcmd.Parameters.AddWithValue("@ThoiGian", dateTimePicker1.Value);
-                        sqlcmd.Parameters.AddWithValue("@GhiChu", txtGhiChu.Text);
-                        int soLuongDuKien;
-                        if (int.TryParse(txtSoLuong.Text, out soLuongDuKien))
-                        {
-                            sqlcmd.Parameters.AddWithValue("@SoLuongDuKien", soLuongDuKien);
-                        }
-                        else
-                        {
-                            // Xử lý trường hợp không thể chuyển đổi thành số nguyên
-                            // (ví dụ: thông báo lỗi, gán giá trị mặc định, ...)
-                        }
-                        sqlcmd.Parameters.AddWithValue("@MaSuKien", maSK);
-                        if (IsRoomBooked(sqlcon, rmID, dateTimePicker1.Value))
-                        {
-                            MessageBox.Show("Phòng đã kín vào thời điểm này. Vui lòng chọn thời điểm khác.");
-                            return;
-                        }
-                        else
-                        {
-                            sqlcmd.ExecuteNonQuery();
-                        }
 
+
+                        using (SqlCommand sqlcmd = new SqlCommand(sqlUpdate, sqlcon))
+                        {
+                            sqlcmd.Parameters.AddWithValue("@TenSuKien", txtTenSuKien.Text);
+                            sqlcmd.Parameters.AddWithValue("@ThoiGian", dateTimePicker1.Value);
+                            sqlcmd.Parameters.AddWithValue("@GhiChu", txtGhiChu.Text);
+                            int soLuongDuKien;
+                            if (int.TryParse(txtSoLuong.Text, out soLuongDuKien))
+                            {
+                                sqlcmd.Parameters.AddWithValue("@SoLuongDuKien", soLuongDuKien);
+                            }
+                            else
+                            {
+                                // Xử lý trường hợp không thể chuyển đổi thành số nguyên
+                                // (ví dụ: thông báo lỗi, gán giá trị mặc định, ...)
+                            }
+                            sqlcmd.Parameters.AddWithValue("@MaSuKien", maSK);
+                            if (IsRoomBooked(sqlcon, rmID, dateTimePicker1.Value))
+                            {
+                                MessageBox.Show("Phòng đã kín vào thời điểm này. Vui lòng chọn thời điểm khác.");
+                                return;
+                            }
+                            else
+                            {
+                                sqlcmd.ExecuteNonQuery();
+                            }
+
+                        }
+                        this.Hide();
+                        EventForm ev = new EventForm(value);
+                        ev.ShowDialog();
+                        this.Close();
                     }
-                    this.Hide();
-                    EventForm ev = new EventForm(value);
-                    ev.ShowDialog();
-                    this.Close();
-
-
-
                 }
             }
         }
@@ -124,6 +129,11 @@ namespace QLSKwinform
             EventForm evf = new EventForm();
             evf.ShowDialog();
             this.Close();
+        }
+
+        private void InforEvent_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

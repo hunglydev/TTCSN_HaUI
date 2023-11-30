@@ -13,7 +13,9 @@ namespace QLSKwinform.Admin.Phong
 {
     public partial class ThemPhong : Form
     {
-        string strCon = @"Data Source=TRANMINHHIEU\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
+        //tạo 2 biến cục bộ
+        string strCon = @"Data Source=DESKTOP-983J608\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
+        //đối tượng kết nối 
         SqlConnection sqlcon = null;
         private List<int> randomNumbers = new List<int>();
         public ThemPhong()
@@ -69,5 +71,16 @@ namespace QLSKwinform.Admin.Phong
             baoTriPhong.ShowDialog();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BaoTriPhong baoTriPhong = new BaoTriPhong();
+            this.Hide();
+            baoTriPhong.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

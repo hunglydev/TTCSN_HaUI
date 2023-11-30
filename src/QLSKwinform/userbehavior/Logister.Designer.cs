@@ -216,6 +216,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Logister";
             this.Text = "Logister";
+            this.Load += new System.EventHandler(this.Logister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

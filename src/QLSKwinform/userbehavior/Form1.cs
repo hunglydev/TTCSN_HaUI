@@ -15,7 +15,8 @@ namespace QLSKwinform
     public partial class formLogin : Form
     {
         //tạo 2 biến cục bộ
-        string strCon = @"Data Source=TRANMINHHIEU\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
+        //tạo 2 biến cục bộ
+        string strCon = @"Data Source=DESKTOP-983J608\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
         //đối tượng kết nối 
         SqlConnection sqlcon = null;
 
@@ -94,6 +95,11 @@ namespace QLSKwinform
             Logister logis = new Logister();
             logis.ShowDialog();
             this.Close();
+        }
+
+        private void formLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

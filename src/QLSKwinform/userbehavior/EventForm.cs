@@ -13,7 +13,8 @@ namespace QLSKwinform
 {
     public partial class EventForm : Form
     {
-        string strCon = @"Data Source=TRANMINHHIEU\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
+        //tạo 2 biến cục bộ
+        string strCon = @"Data Source=DESKTOP-983J608\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
         //đối tượng kết nối 
         SqlConnection sqlcon = null;
         private string em;
@@ -41,34 +42,7 @@ namespace QLSKwinform
 
         private void dGVEvent_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1) return;
-
-            DataGridViewRow row = dGVEvent.Rows[e.RowIndex];
-            int trangThai = (int)row.Cells[7].Value;
-            if (trangThai == 0)
-            {
-                SuKienPhongCombined skp = new SuKienPhongCombined()
-                {
-                    MaTaiKhoan = row.Cells[0].Value.ToString(),
-                    MaSuKien = row.Cells[1].Value.ToString(),
-                    MaPhong = row.Cells[2].Value.ToString(),
-                    TenSukien = row.Cells[3].Value.ToString(),
-                    SoLuong = (int)row.Cells[4].Value,
-                    TinhTrangThanhToan = (int)row.Cells[5].Value,
-                    GhiChu = row.Cells[6].Value.ToString(),
-                    TrangThai = trangThai,
-                    ThoiGian = (DateTime)row.Cells[8].Value,
-                    TenPhong = row.Cells[9].Value.ToString()
-                };
-
-                this.Hide();
-                InforEvent chiTietSuKien = new InforEvent(skp, value);
-                chiTietSuKien.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Phòng đã xác nhận. Không thể thay đổi.");
-            }
+          
         }
 
         private void EventForm_Load(object sender, EventArgs e)
@@ -123,6 +97,39 @@ namespace QLSKwinform
             dGVEvent.Columns[1].Visible = false;
             dGVEvent.Columns[2].Visible = false;
             dGVEvent.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        private void dGVEvent_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+
+            DataGridViewRow row = dGVEvent.Rows[e.RowIndex];
+            int trangThai = (int)row.Cells[7].Value;
+            if (trangThai == 0)
+            {
+                SuKienPhongCombined skp = new SuKienPhongCombined()
+                {
+                    MaTaiKhoan = row.Cells[0].Value.ToString(),
+                    MaSuKien = row.Cells[1].Value.ToString(),
+                    MaPhong = row.Cells[2].Value.ToString(),
+                    TenSukien = row.Cells[3].Value.ToString(),
+                    SoLuong = (int)row.Cells[4].Value,
+                    TinhTrangThanhToan = (int)row.Cells[5].Value,
+                    GhiChu = row.Cells[6].Value.ToString(),
+                    TrangThai = trangThai,
+                    ThoiGian = (DateTime)row.Cells[8].Value,
+                    TenPhong = row.Cells[9].Value.ToString()
+                };
+
+                this.Hide();
+                InforEvent chiTietSuKien = new InforEvent(skp, value);
+                chiTietSuKien.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Phòng đã xác nhận. Không thể thay đổi.");
+            }
+
         }
     }
 }

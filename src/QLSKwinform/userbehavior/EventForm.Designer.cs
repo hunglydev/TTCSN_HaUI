@@ -53,23 +53,26 @@
             this.dGVEvent.RowTemplate.Height = 24;
             this.dGVEvent.Size = new System.Drawing.Size(937, 366);
             this.dGVEvent.TabIndex = 2;
+            this.dGVEvent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVEvent_CellClick);
             this.dGVEvent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVEvent_CellContentClick);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(438, 488);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 48);
             this.button1.TabIndex = 3;
             this.button1.Text = "Thoát";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // EventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QLSKwinform.Properties.Resources.backxanh;
             this.ClientSize = new System.Drawing.Size(1046, 548);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dGVEvent);
