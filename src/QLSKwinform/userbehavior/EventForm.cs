@@ -118,8 +118,6 @@ namespace QLSKwinform
                 listSK.Add(skp);
             }
             reader.Close();
-            
-
             dGVEvent.DataSource = listSK;
             dGVEvent.Columns[0].Visible = false;
             dGVEvent.Columns[1].Visible = false;
