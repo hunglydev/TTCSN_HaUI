@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLSKwinform.VietQRAPI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,8 +33,24 @@ namespace QLSKwinform
             txtSoLuong.Text = skp.SoLuong.ToString();
             txtGhiChu.Text = skp.GhiChu.ToString();
             dateTimePicker1.Text = skp.ThoiGian.ToString();
+            txtThanhTien.Text = skp.GiaPhong.ToString();
+            txtTrangThai.Text = skp.TrangThai.ToString();
+            txtVoucherSuDung.Text = skp.MaVoucherDaSuDung.ToString();
+            txtTinhTrangThanhToan.Text = skp.TinhTrangThanhToan.ToString();
             maSK = skp.MaSuKien.ToString();
             rmID = skp.MaPhong.ToString();
+            if (skp.TrangThai == "đã xác nhận")
+            {
+                txtTenSuKien.Enabled = false;
+                txtDiaDiem.Enabled = false;
+                txtSoLuong.Enabled = false;
+                txtGhiChu.Enabled = false;
+                dateTimePicker1.Enabled = false;
+                txtThanhTien.Enabled = false;
+                txtTinhTrangThanhToan.Enabled = false;
+                txtVoucherSuDung.Enabled = false;
+                txtTrangThai.Enabled = false;
+            }
         }
 
         private void btnAgree_Click(object sender, EventArgs e)
@@ -126,7 +143,7 @@ namespace QLSKwinform
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            EventForm evf = new EventForm();
+            EventForm evf = new EventForm(em);
             evf.ShowDialog();
             this.Close();
         }
@@ -134,6 +151,13 @@ namespace QLSKwinform
         private void InforEvent_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            ThanhToanForm thanhToanForm = new ThanhToanForm(em, txtThanhTien.Text, txtDiaDiem.Text);
+            this.Hide();
+            thanhToanForm.ShowDialog();
         }
     }
 }

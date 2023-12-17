@@ -54,6 +54,8 @@
             this.txtTenSuKien = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaPhong = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtVoucherDaSuDung = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -163,7 +165,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(91, 648);
+            this.button1.Location = new System.Drawing.Point(105, 734);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 51);
             this.button1.TabIndex = 2;
@@ -175,7 +177,7 @@
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(376, 647);
+            this.button3.Location = new System.Drawing.Point(383, 734);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(141, 51);
             this.button3.TabIndex = 4;
@@ -187,7 +189,7 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(674, 649);
+            this.button4.Location = new System.Drawing.Point(673, 734);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 49);
             this.button4.TabIndex = 5;
@@ -332,12 +334,32 @@
             this.txtMaPhong.Size = new System.Drawing.Size(367, 34);
             this.txtMaPhong.TabIndex = 1;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(100, 665);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(235, 31);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Voucher đã sử dụng";
+            this.label11.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // txtVoucherDaSuDung
+            // 
+            this.txtVoucherDaSuDung.Location = new System.Drawing.Point(373, 665);
+            this.txtVoucherDaSuDung.Multiline = true;
+            this.txtVoucherDaSuDung.Name = "txtVoucherDaSuDung";
+            this.txtVoucherDaSuDung.Size = new System.Drawing.Size(363, 31);
+            this.txtVoucherDaSuDung.TabIndex = 13;
+            // 
             // ChiTietSuKien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QLSKwinform.Properties.Resources.backxanh;
-            this.ClientSize = new System.Drawing.Size(896, 711);
+            this.ClientSize = new System.Drawing.Size(896, 845);
+            this.Controls.Add(this.txtVoucherDaSuDung);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -351,6 +373,7 @@
             this.Controls.Add(this.txtMaPhong);
             this.Controls.Add(this.txtMaSuKien);
             this.Controls.Add(this.txtMaTaiKhoan);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -400,5 +423,7 @@
         private System.Windows.Forms.TextBox txtTenSuKien;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaPhong;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtVoucherDaSuDung;
     }
 }

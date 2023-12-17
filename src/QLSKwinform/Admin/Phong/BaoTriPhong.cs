@@ -52,6 +52,7 @@ namespace QLSKwinform.Admin.Phong
                 phong.sucChuaToiDa = (int)reader.GetValue(3);
                 phong.moTaChiTiet = reader.GetString(4);
                 phong.moTaVanTat = reader.GetString(5);
+                phong.giaPhong = (double)reader.GetValue(6);
                 listPhong.Add(phong);
             }
             reader.Close();
@@ -93,6 +94,7 @@ namespace QLSKwinform.Admin.Phong
             phong.sucChuaToiDa =(int) row.Cells[3].Value;
             phong.moTaChiTiet = row.Cells[4].Value.ToString() ;
             phong.moTaVanTat = row.Cells[5].Value.ToString();
+            phong.giaPhong = (double)row.Cells[6].Value;
             ChiTietPhong chiTietPhong = new ChiTietPhong(phong);
             this.Hide();
             chiTietPhong.ShowDialog();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,10 @@ namespace QLSKwinform
     
     public partial class Menu : Form
     {
-
+        //tạo 2 biến cục bộ
+        string strCon = @"Data Source=DESKTOP-983J608\SQLEXPRESS;Initial Catalog=QLSK;Integrated Security=True";
+        //đối tượng kết nối 
+        SqlConnection sqlcon = null;
         private string em;
         public string EM { get; set; }
         private string value;
@@ -190,7 +194,103 @@ namespace QLSKwinform
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            if (sqlcon == null)
+            {
+                sqlcon = new SqlConnection(strCon);
+            }
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+            }
+            //đối tượng thực thi truy vấn
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.CommandType = CommandType.Text;
 
+
+
+            //câu lệnh truy vấn vào tài khoản admin
+            sqlCmd.CommandText = "SELECT tenPhong  FROM PHONG WHERE maPhong = 'P01'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbRoomA.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT diaDiem  FROM PHONG WHERE maPhong = 'P01'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbDiaDiemA.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT sucChuaToiDa FROM PHONG WHERE maPhong = 'P01'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbMountA.Text = "Sức chứa: " + sqlCmd.ExecuteScalar().ToString();
+
+            //câu lệnh truy vấn vào tài khoản admin
+            sqlCmd.CommandText = "SELECT tenPhong  FROM PHONG WHERE maPhong = 'P02'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbRoomB.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT diaDiem  FROM PHONG WHERE maPhong = 'P02'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbDiaDiemB.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT sucChuaToiDa FROM PHONG WHERE maPhong = 'P02'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbAmountB.Text = "Sức chứa: " + sqlCmd.ExecuteScalar().ToString();
+
+            //câu lệnh truy vấn vào tài khoản admin
+            sqlCmd.CommandText = "SELECT tenPhong  FROM PHONG WHERE maPhong = 'P03'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbRoomC.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT diaDiem  FROM PHONG WHERE maPhong = 'P03'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbDiaDiemC.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT sucChuaToiDa FROM PHONG WHERE maPhong = 'P03'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbAmountC.Text = "Sức chứa: " + sqlCmd.ExecuteScalar().ToString();
+
+            //câu lệnh truy vấn vào tài khoản admin
+            sqlCmd.CommandText = "SELECT tenPhong  FROM PHONG WHERE maPhong = 'P04'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbRoomD.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT diaDiem  FROM PHONG WHERE maPhong = 'P04'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbDiaDiemD.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT sucChuaToiDa FROM PHONG WHERE maPhong = 'P04'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbAmountD.Text = "Sức chứa: " + sqlCmd.ExecuteScalar().ToString();
+
+            //câu lệnh truy vấn vào tài khoản admin
+            sqlCmd.CommandText = "SELECT tenPhong  FROM PHONG WHERE maPhong = 'P05'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbRoomE.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT diaDiem  FROM PHONG WHERE maPhong = 'P05'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbDiaDiemE.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT sucChuaToiDa FROM PHONG WHERE maPhong = 'P05'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbAmountE.Text = "Sức chứa: " + sqlCmd.ExecuteScalar().ToString();
+
+            //câu lệnh truy vấn vào tài khoản admin
+            sqlCmd.CommandText = "SELECT tenPhong  FROM PHONG WHERE maPhong = 'P06'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbRoomF.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT diaDiem  FROM PHONG WHERE maPhong = 'P06'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbDiaDiemF.Text = (string)sqlCmd.ExecuteScalar();
+            sqlCmd.CommandText = "SELECT sucChuaToiDa FROM PHONG WHERE maPhong = 'P06'";
+            //gửi truy vấn vào kết nối
+            sqlCmd.Connection = sqlcon;
+            lbAmountF.Text = "Sức chứa: " + sqlCmd.ExecuteScalar().ToString();
         }
     }
 }

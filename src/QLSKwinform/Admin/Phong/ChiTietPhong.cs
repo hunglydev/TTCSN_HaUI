@@ -32,7 +32,7 @@ namespace QLSKwinform.Admin.Phong
             txtSucChuaToiDa.Text = phong.sucChuaToiDa.ToString();
             txtMoTaChiTiet.Text = phong.moTaChiTiet;
             txtMoTaVanTat.Text = phong.moTaVanTat;
-            
+            txtGiaPhong.Text = phong.giaPhong.ToString();
         }
 
         private void ChiTietPhong_Load(object sender, EventArgs e)
@@ -54,13 +54,15 @@ namespace QLSKwinform.Admin.Phong
             SqlCommand sqlcmd = new SqlCommand();
             sqlcmd.CommandType = CommandType.Text;
             sqlcmd.CommandText = "UPDATE PHONG SET tenPhong = @tenPhong, sucChuaToiDa = @sucChuaToiDa, " +
-                "moTaChiTiet = @moTaChiTiet, moTaVanTat = @moTaVanTat, diaDiem = @diaDiem WHERE maPhong = @maPhong";
+                "moTaChiTiet = @moTaChiTiet, moTaVanTat = @moTaVanTat, diaDiem = @diaDiem, giaPhong = @giaPhong WHERE maPhong = @maPhong";
             sqlcmd.Parameters.AddWithValue("@maPhong", txtMaPhong.Text);
             sqlcmd.Parameters.AddWithValue("@tenPhong", txtTenPhong.Text);
             sqlcmd.Parameters.AddWithValue("@moTaChiTiet", txtMoTaChiTiet.Text);
             sqlcmd.Parameters.AddWithValue("@moTaVanTat", txtMoTaVanTat.Text);
             sqlcmd.Parameters.AddWithValue("@diaDiem", txtDiaDiem.Text);
             sqlcmd.Parameters.AddWithValue("@sucChuaToiDa", int.Parse(txtSucChuaToiDa.Text));
+            sqlcmd.Parameters.AddWithValue("@giaPhong", double.Parse(txtGiaPhong.Text));
+            
             sqlcmd.Connection = sqlcon;
             sqlcmd.ExecuteNonQuery();
             sqlcon.Close();

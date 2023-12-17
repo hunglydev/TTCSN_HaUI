@@ -14,17 +14,19 @@ namespace QLSKwinform.Admin.Phong
         [DisplayName("Tên phòng")]
 
         public string tenPhong { get; set; }
-        [DisplayName("Sức chứa tối đa phòng")]
-public string diaDiem {  get; set; }
-        [DisplayName("Mô tả chi tiết phòng")]
-        public int sucChuaToiDa {  get; set; }
         [DisplayName("Địa điểm")]
+        public string diaDiem {  get; set; }
+        [DisplayName("Sức chưa tối đa")]
+        public int sucChuaToiDa {  get; set; }
+        [DisplayName("Mô tả chi tiết")]
         
         
         public string moTaChiTiet {  get; set; }
         [DisplayName("Mô tả vắn tắt")]
 
         public string moTaVanTat {  get; set; }
+        [DisplayName("Giá phòng")]
+        public double giaPhong {  get; set; }
         public Phong() { }
     }
    

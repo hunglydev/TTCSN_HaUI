@@ -70,7 +70,8 @@ namespace QLSKwinform
 
             string sl = txtAmout.Text;
             string note = txtNote.Text;
-            int trangThai = 0;
+            string tinhTrangThanhToan = "chưa thanh toán";
+            string trangThai = "chưa xác nhận";
             SqlCommand sqlCmd = new SqlCommand();
             sqlCmd.CommandType = CommandType.Text;
             List<string> existingAccountIDs = new List<string>();
@@ -117,7 +118,7 @@ namespace QLSKwinform
                         else
                         {
                             string voucher = cbVoucher.SelectedItem.ToString();
-                            sqlCmd.CommandText = "begin transaction; INSERT  into SUKIEN VALUES('" + maTk + "','" + generatedID + "','" + rmID + "',N'" + tenSK + "','" + sl + "','" + 0 + "','" + note + "', " + trangThai + "  ,'" + dtpThoiGían.Value + "'); " +
+                            sqlCmd.CommandText = "begin transaction; INSERT  into SUKIEN VALUES('" + maTk + "','" + generatedID + "','" + rmID + "',N'" + tenSK + "','" + sl + "',N'" + tinhTrangThanhToan + "'   ,'" + note + "',N'" + trangThai + "'  ,'" + dtpThoiGían.Value.ToString("yyyy-MM-dd") + "',N'"+cbVoucher.SelectedItem.ToString()+"'); " +
                                 "Delete From TAIKHOAN_VOUCHER WHERE maVoucher = '" + voucher + "' and maTaiKhoan =(SELECT maTaiKhoan FROM TAIKHOAN where email ='" + value + "') ; commit ";
 
                             // sqlCmd.CommandText = "";
@@ -156,7 +157,7 @@ namespace QLSKwinform
                         }
                         else
                         {
-                            sqlCmd.CommandText = " INSERT into SUKIEN VALUES('" + maTk + "','" + generatedID + "','" + rmID + "',N'" + tenSK + "','" + sl + "','" + 0 + "','" + note + "', " + trangThai + "  ,'" + dtpThoiGían.Value + "'); ";
+                            sqlCmd.CommandText = " INSERT into SUKIEN VALUES('" + maTk + "','" + generatedID + "','" + rmID + "',N'" + tenSK + "','" + sl + "',N'" + tinhTrangThanhToan + "'   ,'" + note + "',N'" + trangThai + "'  ,'" + dtpThoiGían.Value.ToString("yyyy-MM-dd") + "',''); ";
                             // sqlCmd.CommandText = "";
                             sqlCmd.Connection = sqlcon;
                             sqlCmd.ExecuteNonQuery();

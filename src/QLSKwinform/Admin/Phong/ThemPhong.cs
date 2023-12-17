@@ -55,13 +55,14 @@ namespace QLSKwinform.Admin.Phong
                 int id = random.Next(1, 10000);
                 generatedID = "P" + id.ToString();
             } while (existingAccountIDs.Contains(generatedID));
-            sqlCmd.CommandText = "INSERT INTO PHONG VALUES (@maPhong, @tenPhong, @diaDiem, @sucChuaToiDa, @moTaChiTiet, @moTaVanTat)";
+            sqlCmd.CommandText = "INSERT INTO PHONG VALUES (@maPhong, @tenPhong, @diaDiem, @sucChuaToiDa, @moTaChiTiet, @moTaVanTat, @giaPhong)";
             sqlCmd.Parameters.AddWithValue("@maPhong", generatedID);
             sqlCmd.Parameters.AddWithValue("@tenPhong", txtTenPhong.Text);
             sqlCmd.Parameters.AddWithValue("@diaDiem", txtDiaDiem.Text);
             sqlCmd.Parameters.AddWithValue("@sucChuaToiDa", int.Parse(txtSucChuaToiDa.Text));
             sqlCmd.Parameters.AddWithValue("moTaVanTat", txtMoTaVanTat.Text);
             sqlCmd.Parameters.AddWithValue("@maPmoTaChiTiet", txtMoTaChiTiet.Text);
+            sqlCmd.Parameters.AddWithValue("@maPmoTaChiTiet", double.Parse(txtGiaPhong.Text));
             sqlCmd.ExecuteNonQuery();
             sqlcon.Close();
             MessageBox.Show("Thêm phòng thành công");

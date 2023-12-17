@@ -9,50 +9,27 @@ namespace QLSKwinform.Admin.SuKien
 {
     public class SuKien
     {
-        private string maTaiKhoan;
-        private string maSuKien;
-        private string maPhong;
-        private string tenSuKien;
-
-        private int soLuong;
-        private int tinhTrangThanhToan;
-        private string ghiChu;
-        private int trangThai;
-        private DateTime thoiGian;
+        public SuKien() { }
         [DisplayName("Mã tài khoản")]
-        public string MaTaiKhoan {  get=> maTaiKhoan; set=> maTaiKhoan=value; }
+        public string maTaiKhoan {  get; set; }
         [DisplayName("Mã sự kiện")]
-        public string MaSuKien { get => maSuKien; set => maSuKien = value; }
+        public string maSuKien { get; set; }
         [DisplayName("Mã phòng")]
-        public string MaPhong { get => maPhong; set => maPhong = value; }
+        public string maPhong {  get; set; }
         [DisplayName("Tên sự kiện")]
-
-
-        public string TenSukien { get => tenSuKien; set => tenSuKien = value; }
-       
+        public string tenSuKien { get; set; }
         [DisplayName("Số lượng dự kiến")]
-        public int SoLuong { get => soLuong; set => soLuong = value; }
+        public int soLuong {  get; set; }
         [DisplayName("Tình trạng thanh toán")]
-        public int TinhTrangThanhToan { get => tinhTrangThanhToan; set => tinhTrangThanhToan = value; }
+        public string tinhTrangThanhToan {  get; set; }
         [DisplayName("Ghi chú")]
-        public string GhiChu { get => ghiChu; set => ghiChu = value; }
+        public string ghiChu {  get; set; }
+        
         [DisplayName("Trạng thái")]
-        public int TrangThai { get => trangThai; set => trangThai = value; }
+        public string trangThai {  get; set; }
         [DisplayName("Thời gian sự kiện bắt đầu")]
-        public DateTime ThoiGian { get => thoiGian; set => thoiGian = value; }
-
-       public string thanhToan()
-        {
-            if (tinhTrangThanhToan == 1)
-            {
-                return "Đã thanh toán";
-            }
-            return "Chưa thanh toán";
-        }
-        public string TrangThai1()
-        {
-            if (trangThai == 1) { return "Đã đặt phòng"; }
-            return "Chưa đặt phòng";
-        }
+        public DateTime thoiGian {  get; set; }
+        [DisplayName("Voucher đã sử dụng")]
+        public string voucherDaSuDung { get; set; }
     }
 }

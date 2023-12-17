@@ -53,16 +53,17 @@ namespace QLSKwinform.Admin.SuKien
             while (reader.Read())
             {
                 SuKien sk = new SuKien();
-                sk.MaTaiKhoan = reader.GetString(0);
-                sk.MaSuKien = reader.GetString(1);
-                sk.TenSukien = reader.GetString(3);
-                sk.MaPhong = reader.GetString(2);
-                sk.SoLuong = (int)reader.GetValue(4);
-                sk.TinhTrangThanhToan = (int)reader.GetValue(5);
-                sk.GhiChu = reader.GetString(6);
-                sk.TrangThai = (int)reader.GetValue(7);
-                sk.ThoiGian = reader.GetDateTime(8);
-                if (sk.TrangThai == 0)
+                sk.maTaiKhoan = reader.GetString(0);
+                sk.maSuKien = reader.GetString(1);
+                sk.tenSuKien = reader.GetString(3);
+                sk.maPhong = reader.GetString(2);
+                sk.soLuong = (int)reader.GetValue(4);
+                sk.tinhTrangThanhToan = reader.GetString(5);
+                sk.ghiChu = reader.GetString(6);
+                sk.trangThai = reader.GetString(7);
+                sk.thoiGian = reader.GetDateTime(8);
+                sk.voucherDaSuDung = reader.GetString(9);
+                if (sk.trangThai == "chưa xác nhận")
                 {
                     listSK.Add(sk);
                 }
@@ -84,15 +85,16 @@ namespace QLSKwinform.Admin.SuKien
             if (e.RowIndex == -1) return;
             SuKien sk = new SuKien();
             DataGridViewRow row = dgvSuKienChuaDuyet.Rows[e.RowIndex];
-            sk.MaTaiKhoan = row.Cells[0].Value.ToString();
-            sk.MaSuKien = row.Cells[1].Value.ToString();
-            sk.TenSukien = row.Cells[3].Value.ToString();
-            sk.MaPhong = row.Cells[2].Value.ToString();
-            sk.SoLuong = (int)row.Cells[4].Value;
-            sk.TinhTrangThanhToan = (int)row.Cells[5].Value;
-            sk.GhiChu = row.Cells[6].Value.ToString();
-            sk.TrangThai = (int)row.Cells[7].Value;
-            sk.ThoiGian = (DateTime)row.Cells[8].Value;
+            sk.maTaiKhoan = row.Cells[0].Value.ToString();
+            sk.maSuKien = row.Cells[1].Value.ToString();
+            sk.tenSuKien = row.Cells[3].Value.ToString();
+            sk.maPhong = row.Cells[2].Value.ToString();
+            sk.soLuong = (int)row.Cells[4].Value;
+            sk.tinhTrangThanhToan = row.Cells[5].ToString();
+            sk.ghiChu = row.Cells[6].Value.ToString();
+            sk.trangThai = row.Cells[7].ToString();
+            sk.thoiGian = (DateTime)row.Cells[8].Value;
+            sk.voucherDaSuDung = row.Cells[9].Value.ToString();
             ChiTietSuKien chiTietSuKien = new ChiTietSuKien(sk);
             this.Hide();
             chiTietSuKien.ShowDialog();

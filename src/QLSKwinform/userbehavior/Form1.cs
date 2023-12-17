@@ -53,9 +53,10 @@ namespace QLSKwinform
 
             //câu lệnh truy vấn vào tài khoản admin
 
-            sqlCmd.CommandText = "SELECT tenTaiKhoan from TAIKHOAN WHERE tenTaiKhoan='admin2'";
+            sqlCmd.CommandText = "SELECT tenTaiKhoan from TAIKHOAN WHERE tenTaiKhoan = 'admin2'";
             sqlCmd.Connection = sqlcon;
             string result = (string) sqlCmd.ExecuteScalar();
+            MessageBox.Show("test" + result);
 
             if ( result != tenTaiKhoan && password == matKhau)
             {

@@ -28,23 +28,16 @@ namespace QLSKwinform.Admin.SuKien
         public ChiTietSuKien(SuKien sk)
         {
             InitializeComponent();
-            suKien.MaTaiKhoan = sk.MaTaiKhoan;
-            suKien.MaSuKien = sk.MaSuKien;
-            suKien.TenSukien = sk.TenSukien;
-            suKien.MaPhong = sk.MaPhong;
-            suKien.SoLuong = sk.SoLuong;
-            suKien.TinhTrangThanhToan = sk.TinhTrangThanhToan;
-            suKien.GhiChu = sk.GhiChu;
-            suKien.TrangThai = sk.TrangThai;
-            suKien.ThoiGian = sk.ThoiGian;
-            txtMaTaiKhoan.Text = suKien.MaTaiKhoan;
-            txtMaSuKien.Text = suKien.MaSuKien;
-            txtTenSuKien.Text = suKien.TenSukien;
-            txtGhiChu.Text = suKien.GhiChu;
-            txtMaPhong.Text = suKien.MaPhong;
-            txtSoLuong.Text = suKien.SoLuong.ToString();
-            dtThoiGian.Value = suKien.ThoiGian.ToLocalTime();
-            if (suKien.TrangThai == 1)
+           
+            txtMaTaiKhoan.Text = sk.maTaiKhoan;
+            txtMaSuKien.Text = sk.maSuKien;
+            txtTenSuKien.Text = sk.tenSuKien;
+            txtGhiChu.Text = sk .ghiChu;
+            txtMaPhong.Text = sk.maPhong;
+            txtSoLuong.Text = sk.soLuong.ToString();
+            dtThoiGian.Value = sk.thoiGian.ToLocalTime();
+            txtVoucherDaSuDung.Text = sk.voucherDaSuDung;
+            if (sk.trangThai == "đã xác nhận")
             {
                 rdDaXacNhan.Checked = true;
             }
@@ -52,7 +45,7 @@ namespace QLSKwinform.Admin.SuKien
             {
                 rdChuaXacNhan.Checked = true;
             }
-            if (suKien.TinhTrangThanhToan == 1)
+            if (sk.tinhTrangThanhToan == "đã thanh toán")
             {
                 rdDaThanhToan.Checked = true;
             }
@@ -107,23 +100,24 @@ namespace QLSKwinform.Admin.SuKien
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int thanhToan, trangThai;
-            if (rdChuaThanhToan.Checked)
+            string thanhToan, trangThai;
+            if (rdChuaThanhToan.Checked==true)
             {
-                thanhToan = 0;
+                thanhToan = "chưa thanh toán";
             }
             else
             {
-                thanhToan = 1;
+                thanhToan = "đã thanh toán";
             }
-            if (rdChuaXacNhan.Checked)
+
+            if (rdChuaXacNhan.Checked==true)
             {
-                trangThai = 0;
+                trangThai = "chưa xác nhận";
 
             }
             else
             {
-                trangThai = 1;
+                trangThai = "đã xác nhận";
             }
             using (SqlConnection sqlcon = new SqlConnection(strCon))
             {
@@ -131,7 +125,8 @@ namespace QLSKwinform.Admin.SuKien
                 //Truy van vao bang tai khoan
                 string sqlUpdate = "UPDATE SUKIEN SET " +
                     "tenSuKien = @tenSuKien,  soLuongDuKien = @soLuongDuKien," +
-                    "tinhTrangThanhToan = @thanhToan, ghiChu = @ghiChu, trangThai = @trangThai, thoiGian = @thoiGian  WHERE maSuKien = @maSuKien";
+                    "tinhTrangThanhToan = @thanhToan, ghiChu = @ghiChu, trangThai = @trangThai, thoiGian = @thoiGian," +
+                    "voucherDaSuDung = @voucherDaSuDung  WHERE maSuKien = @maSuKien";
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa sự kiện này không?", "Xác nhận sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(result == DialogResult.Yes)
                 {
@@ -144,8 +139,8 @@ namespace QLSKwinform.Admin.SuKien
                         sqlcmd.Parameters.AddWithValue("@ghiChu", txtGhiChu.Text);
                         sqlcmd.Parameters.AddWithValue("@soLuongDuKien", int.Parse(txtSoLuong.Text));
                         sqlcmd.Parameters.AddWithValue("@trangThai", trangThai);
-                        sqlcmd.Parameters.AddWithValue("@thanhToan",thanhToan);
-           
+                        sqlcmd.Parameters.AddWithValue("@thanhToan", thanhToan);
+                        sqlcmd.Parameters.AddWithValue("@voucherDaSuDung", txtVoucherDaSuDung.Text);
                         sqlcmd.Parameters.AddWithValue("@maSuKien", txtMaSuKien.Text);
                         if (IsRoomBooked(sqlcon, txtMaPhong.Text, dtThoiGian.Value))
                         {
@@ -177,24 +172,6 @@ namespace QLSKwinform.Admin.SuKien
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int thanhToan, trangThai;
-            if (rdChuaThanhToan.Checked)
-            {
-                thanhToan = 0;
-            }
-            else
-            {
-                thanhToan = 1;
-            }
-            if (rdChuaXacNhan.Checked)
-            {
-                trangThai = 0;
-
-            }
-            else
-            {
-                trangThai = 1;
-            }
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn xóa sự kiện này không", "Lưu ý", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {

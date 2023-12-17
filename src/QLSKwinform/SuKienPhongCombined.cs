@@ -25,18 +25,30 @@ namespace QLSKwinform
         public int SoLuong { get; set; }
 
         [DisplayName("Tình Trạng Thanh Toán")]
-        public int TinhTrangThanhToan { get; set; }
+        public string TinhTrangThanhToan { get; set; }
 
         [DisplayName("Ghi Chú")]
         public string GhiChu { get; set; }
 
         [DisplayName("Trạng Thái")]
-        public int TrangThai { get; set; }
+        public string TrangThai { get; set; }
 
         [DisplayName("Thời Gian")]
         public DateTime ThoiGian { get; set; }
 
         [DisplayName("Tên Phòng")]
         public string TenPhong { get; set; }
+
+        [DisplayName("Mã voucher đã sử dụng")]
+        public string MaVoucherDaSuDung { get; set; }
+
+        [DisplayName("Giá phòng")]
+        public double GiaPhong { get; set; }
+
+        [DisplayName("Mã voucher")]
+        public string MaVoucher { get; set; }
+
+        [DisplayName("Phần trăm giảm giá")]
+        public double PhanTramGiamGia { get; set; }
     }
 }
