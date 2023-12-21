@@ -118,10 +118,20 @@ namespace QLSKwinform
                         else
                         {
                             string voucher = cbVoucher.SelectedItem.ToString();
-                            sqlCmd.CommandText = "begin transaction; INSERT  into SUKIEN VALUES('" + maTk + "','" + generatedID + "','" + rmID + "',N'" + tenSK + "','" + sl + "',N'" + tinhTrangThanhToan + "'   ,'" + note + "',N'" + trangThai + "'  ,'" + dtpThoiGían.Value.ToString("yyyy-MM-dd") + "',N'"+cbVoucher.SelectedItem.ToString()+"'); " +
-                                "Delete From TAIKHOAN_VOUCHER WHERE maVoucher = '" + voucher + "' and maTaiKhoan =(SELECT maTaiKhoan FROM TAIKHOAN where email ='" + value + "') ; commit ";
+                            sqlCmd.CommandText = "BEGIN TRANSACTION; INSERT INTO SUKIEN VALUES (@maTk, @generatedID, @rmID, @tenSK, @sl, @tinhTrangThanhToan, @note, @trangThai, @thoiGian, @voucher); DELETE FROM TAIKHOAN_VOUCHER WHERE maVoucher = @voucherID AND maTaiKhoan = (SELECT maTaiKhoan FROM TAIKHOAN WHERE email = @value); COMMIT;";
+                            sqlCmd.Parameters.AddWithValue("@maTk", maTk);
+                            sqlCmd.Parameters.AddWithValue("@generatedID", generatedID);
+                            sqlCmd.Parameters.AddWithValue("@rmID", rmID);
+                            sqlCmd.Parameters.AddWithValue("@tenSK", tenSK);
+                            sqlCmd.Parameters.AddWithValue("@sl", sl);
+                            sqlCmd.Parameters.AddWithValue("@tinhTrangThanhToan", tinhTrangThanhToan);
+                            sqlCmd.Parameters.AddWithValue("@note", note);
+                            sqlCmd.Parameters.AddWithValue("@trangThai", trangThai);
+                            sqlCmd.Parameters.AddWithValue("@thoiGian", dtpThoiGían.Value.ToString("yyyy-MM-dd"));
+                            sqlCmd.Parameters.AddWithValue("@voucher", cbVoucher.SelectedItem.ToString());
+                            sqlCmd.Parameters.AddWithValue("@voucherID", voucher);
+                            sqlCmd.Parameters.AddWithValue("@value", value);
 
-                            // sqlCmd.CommandText = "";
                             sqlCmd.Connection = sqlcon;
                             sqlCmd.ExecuteNonQuery();
                             sqlcon.Close();
