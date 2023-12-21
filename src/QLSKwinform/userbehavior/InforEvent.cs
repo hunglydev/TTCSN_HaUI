@@ -119,25 +119,29 @@ namespace QLSKwinform
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            using (SqlConnection sqlcon = new SqlConnection(strCon))
-            {
-                sqlcon.Open();
-                //Truy van vao bang tai khoan
-                string sqlDelete = "DELETE FROM SUKIEN WHERE maSuKien = @MaSuKien";
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa sự kiện này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    using (SqlCommand sqlcmd = new SqlCommand(sqlDelete, sqlcon))
-                    {
-                        sqlcmd.Parameters.AddWithValue("@MaSuKien", maSK);
-                        sqlcmd.ExecuteNonQuery();
-                    }
-                    this.Hide();
-                    EventForm ev = new EventForm(em);
-                    ev.ShowDialog();
-                    this.Close();
-                }
-            }
+             using (SqlConnection sqlcon = new SqlConnection(strCon))
+             {
+                 sqlcon.Open();
+                 //Truy van vao bang tai khoan
+                 string sqlDelete = "DELETE FROM SUKIEN WHERE maSuKien = @MaSuKien";
+                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa sự kiện này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                 if (result == DialogResult.Yes && txtTrangThai.Text=="chưa xác nhận")
+                 {
+                     using (SqlCommand sqlcmd = new SqlCommand(sqlDelete, sqlcon))
+                     {
+                         sqlcmd.Parameters.AddWithValue("@MaSuKien", maSK);
+                         sqlcmd.ExecuteNonQuery();
+                     }
+                     this.Hide();
+                     EventForm ev = new EventForm(em);
+                     ev.ShowDialog();
+                     this.Close();
+                 }
+                 if(result == DialogResult.Yes && txtTrangThai.Text=="đã xác nhận")
+                 {
+                     MessageBox.Show("Không thể xóa được sự kiện vì đã được xác nhận sự kiện");
+                 }
+             }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
